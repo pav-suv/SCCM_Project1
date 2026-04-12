@@ -7,4 +7,4 @@ function New-PCXCMExcludeCollection{
     Write-Host "Collection excluded" -ForegroundColor Green
 }
 
-New-PCXCMExcludeCollection -Collectiname "AAA-Install" -excludecollection "AAA-Exception"
+New-PCXCMExcludeCollection -Collectiname "PKG_7zip_2.0.0_01[Install]" -excludecollection "PKG_7zip_2.0.0_01[Exception]"

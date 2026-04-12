@@ -16,7 +16,10 @@ function New-PCXCMCollection{
    
 }
 
- New-PCXCMCollection -collectionname "7zip_2.0.0.0[Install]" 
+ New-PCXCMCollection -collectionname "PKG_7zip_2.0.0_01[Install]" 
+ New-PCXCMCollection -collectionname "PKG_7zip_2.0.0_01[Available]" 
+ New-PCXCMCollection -collectionname "PKG_7zip_2.0.0_01[UnInstall]" 
+ New-PCXCMCollection -collectionname "PKG_7zip_2.0.0_01[Exception]" 
 
  
 

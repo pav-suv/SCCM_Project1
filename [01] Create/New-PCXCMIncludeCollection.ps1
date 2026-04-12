@@ -7,4 +7,4 @@ function New-PCXCMIncludeCollection{
     Write-Host "Collection included" -ForegroundColor Green
 }
 
-New-PCXCMIncludeCollection -Collectionname "AAA-Install" -includecollection "AAA-Available"
+New-PCXCMIncludeCollection -Collectionname "PKG_7zip_2.0.0_01[Install]" -includecollection "PKG_7zip_2.0.0_01[Available]"

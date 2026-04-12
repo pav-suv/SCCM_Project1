@@ -28,6 +28,10 @@ function New-PCXCMPackage{
      )
      New-CMPackage -Name $packagename -Manufacturer $company -Version $version -Language $language -Path $path       
 }
+
+New-PCXCMPackage "PKG_7zip_2.0.0_01" "Igor_Pavlov" "2.0.0" "EN-US"  "\\192.168.25.214\Package_Source\Applications\Igor_Pavlov\7Zip\7Zip_26.0.0.0"
+
+
 <#Usage example
 New-PCXCMPackage -packagename "PKG_7zip_2.0.0" -company "Igor_Pavlov" -version "2.0.0" -language "EN-US" -path "\\192.168.25.214\Package_Source\Applications\Igor_Pavlov\7zip\7zip_2.0.0"
 write-host "Package Created" -ForegroundColor Green

@@ -15,8 +15,8 @@ New-CMApplicationDeployment -Name "$name" -AvailableDateTime "$availabledatetime
 
 
 
-New-PCXCMApplicationDeployment -name "APS_7Zip" -AvailableDateTime '06/04/2026 00:00:00' -Collectionname 'InstallCollection' -DeadlineDateTime '06/04/2026 00:00:00' -action "Install" -purpose "Required"
+New-PCXCMApplicationDeployment -name "APS_7zip_26.0.0" -AvailableDateTime '12/04/2026 00:00:00' -Collectionname 'PKG_7zip_2.0.0_01[Available]' -DeadlineDateTime '06/04/2026 00:00:00' -action "Install" -purpose "Required"
 
-New-PCXCMApplicationDeploymentment -name "APS_7Zip" -AvailableDateTime '06/04/2026 00:00:00' -Collectionname 'AvailableCollection' -DeadlineDateTime '06/04/2026 00:00:00' -action "Install" -purpose "Available"
+New-PCXCMApplicationDeploymentment -name "APS_7zip_26.0.0" -AvailableDateTime '12/04/2026 00:00:00' -Collectionname 'PKG_7zip_2.0.0_01[Install]' -DeadlineDateTime '06/04/2026 00:00:00' -action "Install" -purpose "Available"
 
-New-PCXCMApplicationDeployment -name "APS_7Zip" -AvailableDateTime '06/04/2026 00:00:00' -Collectionname 'UninstallCollection' -DeadlineDateTime '06/04/2026 00:00:00' -action "Uninstall" -purpose "Required"
+New-PCXCMApplicationDeployment -name "APS_7zip_26.0.0" -AvailableDateTime '12/04/2026 00:00:00' -Collectionname 'PKG_7zip_2.0.0_01[UnInstall]' -DeadlineDateTime '06/04/2026 00:00:00' -action "Uninstall" -purpose "Required"

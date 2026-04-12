@@ -7,4 +7,7 @@ function Read-PCXCMCollection {
 }
 
 
- Read-PCXCMCollection -Collectionname "PKG_7zip_2.0.0"
+ Read-PCXCMCollection -Collectionname "PKG_7zip_2.0.0_01[Available]"
+ Read-PCXCMCollection -Collectionname "PKG_7zip_2.0.0_01[Install]"
+ Read-PCXCMCollection -Collectionname "PKG_7zip_2.0.0_01[UnInstall]"
+ Read-PCXCMCollection -Collectionname "PKG_7zip_2.0.0_01[Exception]"

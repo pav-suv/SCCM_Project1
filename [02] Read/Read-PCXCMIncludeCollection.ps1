@@ -7,7 +7,7 @@ function Read-IncludeCollection {
 Get-CMDeviceCollectionIncludeMembershipRule -CollectionName $collectionname
 }
 
-Read-IncludeCollection -collectionname "PKG_7zip_2.0.0"
+Read-IncludeCollection -collectionname "PKG_7zip_2.0.0_01[Install]"
 
 
 

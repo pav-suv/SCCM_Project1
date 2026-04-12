@@ -14,5 +14,5 @@ function New-Application{
     write-host "Application $name : Created " -ForegroundColor Yellow
 }
  
-    New-Application -name "APS_7Zip" -description "New Application" -publisher "Igor-Pavlov" -softwereversion "26.00" -ReleaseDate "2/12/2026" -Iconlocationfile "\\192.168.25.214\Package_Source\Applications\Igor_Pavlov\7Zip_msi\7zip_26.0.0\7ZipIcon.png"
+    New-Application -name "APS_7zip_26.0.0" -description "New Application" -publisher "Igor-Pavlov" -softwereversion "26.00" -ReleaseDate "2/12/2026" -Iconlocationfile "\\192.168.25.214\Package_Source\Applications\Igor_Pavlov\7Zip_msi\7zip_26.0.0\7ZipIcon.png"
   

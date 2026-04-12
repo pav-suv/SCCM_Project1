@@ -7,7 +7,7 @@ function Read-PCXCMPackage {
 }
 
 
- Read-PCXCMPackage -PackageName "PKG_7zip_2.0.0"
+ Read-PCXCMPackage -PackageName "APS_7zip_26.0.0"
 
 
 

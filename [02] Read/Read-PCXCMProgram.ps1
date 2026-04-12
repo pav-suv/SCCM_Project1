@@ -8,3 +8,6 @@ function Read-PCXCMProgram {
 
 
  Read-PCXCMProgram -programname "AvailableProgram"
+ Read-PCXCMProgram -programname "InstallProgram"
+ Read-PCXCMProgram -programname "UninstallProgram"
+ 

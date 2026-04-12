@@ -7,4 +7,4 @@ function Read-ExcludeCollection {
 Get-CMDeviceCollectionExcludeMembershipRule -CollectionName $collectionname
 }
 
-Read-ExcludeCollection  -collectionname "PKG_7zip_2.0.0"
+Read-ExcludeCollection  -collectionname "PKG_7zip_2.0.0_01[Available]"

@@ -25,7 +25,7 @@ Remove-CMPackageDeployment
 
 
     }
-Remove-PCXCMPackageDeployment -packagename"PKG_7zip_2.0.0" -programname "AvailableProgram"
-Remove-PCXCMPackageDeployment -packagename"PKG_7zip_2.0.0" -programname "InstallProgram"
-Remove-PCXCMPackageDeployment -packagename"PKG_7zip_2.0.0" -programname "UninstallProgram"
+Remove-PCXCMPackageDeployment -packagename"PKG_7zip_2.0.0_01" -programname "AvailableProgram"
+Remove-PCXCMPackageDeployment -packagename"PKG_7zip_2.0.0_01" -programname "InstallProgram"
+Remove-PCXCMPackageDeployment -packagename"PKG_7zip_2.0.0_01" -programname "UninstallProgram"
 

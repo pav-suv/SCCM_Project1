@@ -6,5 +6,12 @@ function New-PCXCMIncludeCollection{
     Add-CMDeviceCollectionIncludeMembershipRule -CollectionName $Collectionname -IncludeCollectionName $includecollection
     Write-Host "Collection included" -ForegroundColor Green
 }
-
+<#
+Usage example
 New-PCXCMIncludeCollection -Collectionname "PKG_7zip_2.0.0_01[Install]" -includecollection "PKG_7zip_2.0.0_01[Available]"
+
+# Commnad line
+
+# MS Documnet
+
+#>

@@ -23,4 +23,20 @@ function New-PCXCMCollection{
 
  
 
- 
+ <#Usage example
+
+ https://learn.microsoft.com/en-us/powershell/module/configurationmanager/new-cmdevicecollection?view=sccm-ps
+
+ New-CMDeviceCollection
+    -LimitingCollectionName <String>
+    -Name <String>
+    [-Comment <String>]
+    [-RefreshSchedule <IResultObject>]
+    [-RefreshType <CollectionRefreshType>]
+    [-WhatIf]
+    [-Confirm]
+    [<CommonParameters>]
+
+    New-CMDeviceCollection -Name $collectionname -LimitingCollectionName $limitingcollection
+
+ #>

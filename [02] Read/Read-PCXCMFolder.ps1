@@ -15,7 +15,7 @@ Get-CMFolder
     [-ForceWildcardHandling]
     [<CommonParameters>]
 
-Command Usage example :
+Direct Command :
 Get-CMFolder -Name "TEST" -ParentFolderPath "DeviceCollection"
 #>
 
@@ -27,13 +27,19 @@ function Read-PCXCMFolder{
         [string]$FolderName,
 
         [parameter(Mandatory=$true, Position=1)] 
-        
+        [Alias("Path", "FP")]
         [string]$ParentFolderPath
     )
 Get-CMFolder -Name $FolderName -ParentFolderPath $ParentFolderPath
 }
 
 <# 
-Function Usage example :
+Usage example :
 Read-PCXCMFolder -FolderName "TEST" -ParentFolderPath "DeviceCollection"
 #>
+
+
+
+
+
+

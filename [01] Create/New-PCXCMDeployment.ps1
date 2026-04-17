@@ -1,3 +1,59 @@
+<#
+MS-Document : 
+https://learn.microsoft.com/en-us/powershell/module/configurationmanager/new-cmpackagedeployment?view=sccm-ps
+
+
+Syntax :
+New-CMPackageDeployment
+    -PackageName <String>
+    -ProgramName <String>
+    [-DeployPurpose <DeployPurposeType>]
+    [-DeviceProgram]
+    [-RecurUnit <RecurUnitType>]
+    [-RecurValue <Int32>]
+    [-Rerun <Boolean>]
+    [-UseUtc <Boolean>]
+    [-DistributeCollectionName <String>]
+    [-DistributeContent]
+    [-DistributionPointGroupName <String>]
+    [-DistributionPointName <String>]
+    [-AvailableDateTime <DateTime>]
+    [-Comment <String>]
+    [-DeadlineDateTime <DateTime>]
+    [-UseMeteredNetwork <Boolean>]
+    [-Collection <IResultObject>]
+    [-CollectionId <String>]
+    [-CollectionName <String>]
+    [-DisableWildcardHandling]
+    [-ForceWildcardHandling]
+    [-WhatIf]
+    [-Confirm]
+    [<CommonParameters>]
+
+
+Direct Command :
+      New-CMPackageDeployment -StandardProgram -PackageName $packagename -CollectionName $collectionname -DeployPurpose Required -ProgramName $programname  -Schedule $NewScheduleDeadline
+
+#>
+
+# Function goes below
+
+
+<# 
+Usage example :
+
+#>
+
+
+
+
+
+
+
+
+
+
+
 function New-PCXCMDeployment{
      param(
         [parameter(Mandatory=$true)] [string] $packagename,
@@ -29,36 +85,8 @@ function New-PCXCMDeployment{
 <#
 Usage example::::::::::::::::::
 
-https://learn.microsoft.com/en-us/powershell/module/configurationmanager/new-cmpackagedeployment?view=sccm-ps
 
-New-CMPackageDeployment
-    -PackageName <String>
-    -ProgramName <String>
-    [-DeployPurpose <DeployPurposeType>]
-    [-DeviceProgram]
-    [-RecurUnit <RecurUnitType>]
-    [-RecurValue <Int32>]
-    [-Rerun <Boolean>]
-    [-UseUtc <Boolean>]
-    [-DistributeCollectionName <String>]
-    [-DistributeContent]
-    [-DistributionPointGroupName <String>]
-    [-DistributionPointName <String>]
-    [-AvailableDateTime <DateTime>]
-    [-Comment <String>]
-    [-DeadlineDateTime <DateTime>]
-    [-UseMeteredNetwork <Boolean>]
-    [-Collection <IResultObject>]
-    [-CollectionId <String>]
-    [-CollectionName <String>]
-    [-DisableWildcardHandling]
-    [-ForceWildcardHandling]
-    [-WhatIf]
-    [-Confirm]
-    [<CommonParameters>]
-    
-New-PCXCMDeployment -PackageName "PKG_7zip_2.0.0_01" -CollectionName "PKG_7zip_2.0.0_01[Install]" -ProgramName "InstallProgram" 
-#>
+
 
 <#
 Usage examples::::::::::::::::::

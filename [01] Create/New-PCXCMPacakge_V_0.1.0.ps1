@@ -1,5 +1,5 @@
 ﻿#
-
+https://learn.microsoft.com/en-us/powershell/module/configurationmanager/new-cmpackage?view=sccm-ps
 <#
 New-CMPackage
     -Name <String>

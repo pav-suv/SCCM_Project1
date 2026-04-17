@@ -1,3 +1,34 @@
+<#
+MS-Document : 
+
+
+Syntax :
+
+
+Direct Command :
+
+#>
+
+# Function goes below
+
+
+<# 
+Usage example :
+
+#>
+
+
+
+
+
+
+
+
+
+
+
+
+
 function New-PCXCMApplicationDeploymentType {
     param(
         [parameter(mandatory=$true)] [string] $name,

@@ -1,17 +1,47 @@
+<#
+MS-Document : 
+https://learn.microsoft.com/en-us/powershell/module/configurationmanager/add-cmdevicecollectionincludemembershiprule?view=sccm-ps
+
+Syntax :
+Add-CMDeviceCollectionIncludeMembershipRule
+    -CollectionName <String>
+    -IncludeCollectionName <String>
+    [-PassThru]
+    [-WhatIf]
+    [-Confirm]
+    [<CommonParameters>]
+
+
+Direct Command :
+Add-CMDeviceCollectionIncludeMembershipRule -CollectionName $CollectionName -IncludeCollectionName $IncludeCollection
+#>
+
+# Function goes below
 function New-PCXCMIncludeCollection{
     param(
-        [parameter(Mandatory=$true)] [string] $Collectionname,
-        [parameter(Mandatory=$true)] [string] $includecollection
+        [parameter(Mandatory=$true, Position=0)] 
+        [string] $CollectionName,
+
+        [parameter(Mandatory=$true)] 
+        [string] $IncludeCollection
     )
-    Add-CMDeviceCollectionIncludeMembershipRule -CollectionName $Collectionname -IncludeCollectionName $includecollection
+    Add-CMDeviceCollectionIncludeMembershipRule -CollectionName $CollectionName -IncludeCollectionName $IncludeCollection
     Write-Host "Collection included" -ForegroundColor Green
 }
-<#
-Usage example
-New-PCXCMIncludeCollection -Collectionname "PKG_7zip_2.0.0_01[Install]" -includecollection "PKG_7zip_2.0.0_01[Available]"
 
-# Commnad line
-
-# MS Documnet
-
+<# 
+Usage example :
+New-PCXCMIncludeCollection -CollectionName "PKG_7zip_2.0.0_01[Install]" -IncludeCollection "PKG_7zip_2.0.0_01[Available]"
 #>
+
+
+
+
+
+
+
+
+
+
+
+

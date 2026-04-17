@@ -54,7 +54,35 @@ CHANGELOG:
 [0.1.0] - 2026-04-07
 - Initial version
 #>
-     param (
+
+
+
+<#
+MS-Document : 
+https://learn.microsoft.com/en-us/powershell/module/configurationmanager/new-cmpackage?view=sccm-ps
+
+Syntax :
+New-CMPackage
+    -Name <String>
+    [-Description <String>]
+    [-Language <String>]
+    [-Manufacturer <String>]
+    [-Path <String>]
+    [-Version <String>]
+    [-DisableWildcardHandling]
+    [-ForceWildcardHandling]
+    [-WhatIf]
+    [-Confirm]
+    [<CommonParameters>]
+
+
+Direct Command :
+New-CMPackage -Name $Packagename -Manufacturer $Company -Version $Version -Language $Language -Path $Path       
+
+#>
+
+# Function goes below
+param (
         [parameter(Mandatory=$true, Position=0, HelpMessage = "Enter the package name properly!!!")] 
         [ValidateNotNullOrEmpty()]         
         [Alias("Name","Pkg","Package","PkgName")] 
@@ -94,8 +122,10 @@ CHANGELOG:
 
 }
 
-<#Usage example
-New-PCXCMPackage -packagename "PKG_7zip_2.0.0" -company "Igor_Pavlov" -version "2.0.0" -language "EN-US" -path "\\192.168.25.214\Package_Source\Applications\Igor_Pavlov\7zip\7zip_2.0.0"
+
+<# 
+Usage example ""
+New-PCXCMPackage -Packagename "PKG_7zip_2.0.0" -Company "Igor_Pavlov" -vVrsion "2.0.0" -Language "EN-US" -Path "\\192.168.25.214\Package_Source\Applications\Igor_Pavlov\7zip\7zip_2.0.0"
 write-host "Package Created" -ForegroundColor Green
 #>
 

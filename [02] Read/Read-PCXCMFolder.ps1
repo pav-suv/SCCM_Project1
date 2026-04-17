@@ -22,8 +22,13 @@ Get-CMFolder -Name "TEST" -ParentFolderPath "DeviceCollection"
 # Function goes below
 function Read-PCXCMFolder{
     param(
-        [parameter(Mandatory=$true)] [string] $FolderName,
-        [parameter(Mandatory=$true)] [string] $ParentFolderPath
+        [parameter(Mandatory=$true, Position=0)] 
+        [Alias("Name", "FN")]
+        [string]$FolderName,
+
+        [parameter(Mandatory=$true, Position=1)] 
+        
+        [string]$ParentFolderPath
     )
 Get-CMFolder -Name $FolderName -ParentFolderPath $ParentFolderPath
 }

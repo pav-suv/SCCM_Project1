@@ -17,9 +17,10 @@ Remove-CMFolder
 
 
 Direct Command :
-Remove-CMFolder -Name "Create" -ParentFolderPath "DeviceCollection" -Force
+Remove-CMFolder -Name $FolderName -ParentFolderPath $ParentFolderPath -Force
 
 #>
+
 # Function goes below
 function Remove-PCXCMFolder {
     param (
@@ -32,7 +33,7 @@ function Remove-PCXCMFolder {
     )
 
 Remove-CMFolder -Name $FolderName -ParentFolderPath $ParentFolderPath -Force
-         
+
 }
 
 <# 

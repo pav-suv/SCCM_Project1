@@ -1,15 +1,31 @@
-Set-CMPackageDeployment
-    -DeviceProgramName <String>
-    -PackageName <String>
+<#
+MS-Document : 
 
 
-    function Update-PCXCMPackageDeployment {
+Syntax :
+
+
+Direct Command :
+    Set-CMPackageDeployment -DeviceProgramName $ProgramName -PackageName $PackageName
+
+#>
+
+# Function goes below
+function Update-PCXCMPackageDeployment {
     param (
-        $packagename,
-        $programname
+        $PackageName,
+        $ProgramName
     )
     
-    Set-CMPackageDeployment -DeviceProgramName $programname -PackageName $packagename
+    Set-CMPackageDeployment -DeviceProgramName $ProgramName -PackageName $PackageName
 }
 
-Update-PCXCMPackageDeployment -programname "aaa" -packagename "PKG_7zip_2.0.0" 
+<# 
+Usage example :
+Update-PCXCMPackageDeployment -ProgramName "aaa" -PackageName "PKG_7zip_2.0.0" 
+#>
+
+
+
+
+    

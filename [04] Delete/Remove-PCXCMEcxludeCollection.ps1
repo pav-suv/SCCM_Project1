@@ -1,10 +1,37 @@
+<#
+MS-Document : 
+https://learn.microsoft.com/en-us/powershell/module/configurationmanager/remove-cmcollectionexcludemembershiprule?view=sccm-ps
+
+Syntax :
+Remove-CMCollectionExcludeMembershipRule
+    -CollectionName <String>
+    -ExcludeCollectionName <String>
+    [-Force]
+    [-WhatIf]
+    [-Confirm]
+    [<CommonParameters>]
+
+Direct Command :
+Remove-CMCollectionExcludeMembershipRule -CollectionName "$CollectionName" -Excludecollectionname "$ExcludecollectionName" -Force
+
+#>
+
+# Function goes below
 function Remove-PCXCMExcludeCollection{
      param(
-        [parameter(Mandatory=$true)] [string] $collectionname,
-        [parameter(Mandatory=$true)] [string] $Excludecollectionname
+        [parameter(Mandatory=$true,Position=0)] 
+        [Alias("CLName", "Name")]
+        [string] $CollectionName,
+        [parameter(Mandatory=$true,Position=1)]
+        [Alias("Name", "ExcludeCL")]
+         [string] $ExcludecollectionName
      )
 
-Remove-CMCollectionExcludeMembershipRule -CollectionName "$collectionname" -Excludecollectionname "$Excludecollectionname" -Force
+Remove-CMCollectionExcludeMembershipRule -CollectionName "$CollectionName" -ExcludecollectionName "$ExcludecollectionName" -Force
 }
 
-Remove-PCXCMExcludeCollection -collectionname "InstallCollection" -Excludecollectionname "AvailableCollection"
+<# 
+Usage example :
+Remove-PCXCMExcludeCollection -CollectionName "InstallCollection" -ExcludecollectionName "AvailableCollection"
+#>
+

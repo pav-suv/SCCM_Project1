@@ -25,14 +25,24 @@ Set-CMFolder -Name "<OLD_Name>" -NewName "<NEW_Name>" -ParentFolderPath "DeviceC
 # Function goes below
 function  Set-PCXCMFolder{
     param(
-        [parameter(Mandatory=$true)] [string] $OldName,
-        [parameter(Mandatory=$true)] [string] $NewName,
-        [parameter(Mandatory=$true)] [string] $ParentFolderPath
+        [parameter(Mandatory=$true, Position=0)]
+        [Alias("Name", "OLName")]
+         [string] $OldName,
+
+        [parameter(Mandatory=$true, Position=1)]
+        [Alias("Nmae", "NWName")]
+         [string] $NewName,
+
+        [parameter(Mandatory=$true, Position=2)] 
+        [Alias("Path", "PFPath")]
+        [string] $ParentFolderPath
     )
 Set-CMFolder -Name $OldName -NewName $NewName -ParentFolderPath $ParentFolderPath
 }
 
 <# 
 Usage example :
-Set-PCXCMFolder -OldName "TEST" -NewName "TEST1" -ParentFolderPath "DeviceCollection"
+Set-PCXCMFolder -OldName "TEST" -NewName "TEST2" -ParentFolderPath "DeviceCollection"
 #>
+
+

@@ -7,7 +7,7 @@ Direct Command :
 
 #>
 
-# Function goes below
+# Function goes below (Make use of begin {} process {} end {} keywards)
 
 <# 
 Usage example :

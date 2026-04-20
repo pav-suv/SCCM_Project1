@@ -44,7 +44,6 @@ New-CMApplicationDeployment
     [-Confirm]
     [<CommonParameters>]
 
-
 Direct Command :
 New-CMApplicationDeployment -Name "$Name" -AvailableDateTime "$Availabledatetime" -CollectionName $Collectionname  -DeadlineDateTime $Deadlinedatetime -DeployAction $Action -DeployPurpose $Purpose
 #>
@@ -53,7 +52,7 @@ New-CMApplicationDeployment -Name "$Name" -AvailableDateTime "$Availabledatetime
 function New-PCXCMApplicationDeployment{
     param (
         [parameter(mandatory=$true, Position=0)]
-        [Alias("Name", "AppName")]
+        [Alias("ApplicationName", "AppName")]
         [string]$Name,
 
         [parameter(Mandatory=$true, Position=1)] 
@@ -61,15 +60,15 @@ function New-PCXCMApplicationDeployment{
         [datetime]$Availabledatetime,
 
         [parameter(Mandatory=$true, Position=2)]
-        [Alias("Name","CLName")]
+        [Alias("CLName")]
         [string]$Collectionname,
 
         [parameter(Mandatory=$true, Position=3)] 
-        [Alias("DateTime","DedDT")]
+        [Alias("DedDT")]
         [datetime]$Deadlinedatetime,
 
         [parameter(Mandatory=$true, Position=4)] 
-        [Alias("Action","Acn")]
+        [Alias("Acn")]
         [string]$Action,
 
         [parameter(Mandatory=$true, Position=5)] 
@@ -77,25 +76,26 @@ function New-PCXCMApplicationDeployment{
         [string]$Purpose
 
     )
-    
-New-CMApplicationDeployment -Name "$Name" -AvailableDateTime "$Availabledatetime" -CollectionName $Collectionname  -DeadlineDateTime $Deadlinedatetime -DeployAction $Action -DeployPurpose $Purpose
+        # Start
+        begin {
+            Write-Host "We are creating new application deployment : $Name "
+        }
 
+        # Actuall Process goeas here
+        process {
+            New-CMApplicationDeployment -Name "$Name" -AvailableDateTime "$Availabledatetime" -CollectionName $Collectionname  -DeadlineDateTime $Deadlinedatetime -DeployAction $Action -DeployPurpose $Purpose
+        }
+
+        # End in flow chart
+        end {
+            Write-Host "Deployment creation process completed : $Name"
+        }
 }
 
 <# 
 Usage example : 
 New-PCXCMApplicationDeployment -Name "APS_7zip_26.0.0" -AvailableDateTime '12/04/2026 00:00:00' -Collectionname 'PKG_7zip_2.0.0_01[Available]' -DeadlineDateTime '06/04/2026 00:00:00' -Action "Install" -Purpose "Required"
-
 New-PCXCMApplicationDeploymentment -Name "APS_7zip_26.0.0" -AvailableDateTime '12/04/2026 00:00:00' -Collectionname 'PKG_7zip_2.0.0_01[Install]' -DeadlineDateTime '06/04/2026 00:00:00' -Action "Install" -Purpose "Available"
-
 New-PCXCMApplicationDeployment -Name "APS_7zip_26.0.0" -AvailableDateTime '12/04/2026 00:00:00' -Collectionname 'PKG_7zip_2.0.0_01[UnInstall]' -DeadlineDateTime '06/04/2026 00:00:00' -Action "Uninstall" -Purpose "Required"
-
 #>
-
-
-
-
-
-
-
 

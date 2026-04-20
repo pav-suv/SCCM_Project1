@@ -75,7 +75,7 @@ function New-PCXCMApplicationDeployment{
         [Alias("Reason","Rsn")]
         [string]$Purpose
     )
-    
+
         # Start
         begin {
             Write-Host "We are creating new application deployment : $Name "
@@ -94,8 +94,8 @@ function New-PCXCMApplicationDeployment{
 
 <# 
 Usage example : 
-New-PCXCMApplicationDeployment -Name "APS_7zip_26.0.0" -AvailableDateTime '12/04/2026 00:00:00' -Collectionname 'PKG_7zip_2.0.0_01[Available]' -DeadlineDateTime '06/04/2026 00:00:00' -Action "Install" -Purpose "Required"
-New-PCXCMApplicationDeploymentment -Name "APS_7zip_26.0.0" -AvailableDateTime '12/04/2026 00:00:00' -Collectionname 'PKG_7zip_2.0.0_01[Install]' -DeadlineDateTime '06/04/2026 00:00:00' -Action "Install" -Purpose "Available"
-New-PCXCMApplicationDeployment -Name "APS_7zip_26.0.0" -AvailableDateTime '12/04/2026 00:00:00' -Collectionname 'PKG_7zip_2.0.0_01[UnInstall]' -DeadlineDateTime '06/04/2026 00:00:00' -Action "Uninstall" -Purpose "Required"
+New-PCXCMApplicationDeployment -Name "APS_7zip_26.0.1" -AvailableDateTime '12/04/2026 00:00:00' -Collectionname 'PKG_7zip_2.0.0_01[Available]' -DeadlineDateTime '06/04/2026 00:00:00' -Action "Install" -Purpose "Required"
+New-PCXCMApplicationDeploymentment -Name "APS_7zip_26.0.1" -AvailableDateTime '12/04/2026 00:00:00' -Collectionname 'PKG_7zip_2.0.0_01[Install]' -DeadlineDateTime '06/04/2026 00:00:00' -Action "Install" -Purpose "Available"
+New-PCXCMApplicationDeployment -Name "APS_7zip_26.0.1" -AvailableDateTime '12/04/2026 00:00:00' -Collectionname 'PKG_7zip_2.0.0_01[UnInstall]' -DeadlineDateTime '06/04/2026 00:00:00' -Action "Uninstall" -Purpose "Required"
 #>
 

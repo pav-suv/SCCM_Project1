@@ -74,8 +74,8 @@ function New-PCXCMApplicationDeployment{
         [parameter(Mandatory=$true, Position=5)] 
         [Alias("Reason","Rsn")]
         [string]$Purpose
-
     )
+    
         # Start
         begin {
             Write-Host "We are creating new application deployment : $Name "

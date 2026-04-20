@@ -76,7 +76,6 @@ function New-PCXCMApplicationDeployment{
         [Alias("Reason","Rsn")]
         [string]$Purpose
 
-
     )
 New-CMApplicationDeployment -Name "$Name" -AvailableDateTime "$Availabledatetime" -CollectionName $Collectionname  -DeadlineDateTime $Deadlinedatetime -DeployAction $Action -DeployPurpose $Purpose
 

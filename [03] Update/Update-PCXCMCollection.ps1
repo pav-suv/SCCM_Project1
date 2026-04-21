@@ -33,17 +33,29 @@ function Update-PCXCMCollection {
         [String] $CollectionName,
 
         [Parameter(Mandatory=$true, Position=1)]
-        [Alias("Name", "Discription")]
+        [Alias("Discription")]
         [String] $comment   
     )
-    
-    Set-CMDeviceCollection -Name $CollectionName -Comment $Comment
+    # Start
+        begin {
+            Write-Host "We are updating Package Collection : $CollectionName "
+        }
+
+        # Actuall Process goeas here
+        process {
+            Set-CMDeviceCollection -Name $CollectionName -Comment $Comment
+
+        }
+
+        # End in flow chart
+        end {
+            Write-Host "CollectionName update process completed : $CollectionName "
+        }
 }
 
 <# 
 Usage example :
-Update-PCXCMCollection -CollectionName "PKG_7zip_2.0.0" -Comment "Comment"
-
+Update-PCXCMCollection -CollectionName "PKG_7zip_2.0.0_01[Available]" -Comment "asd"
 #>
 
 

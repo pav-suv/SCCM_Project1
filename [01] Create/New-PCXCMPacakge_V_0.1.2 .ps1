@@ -1,7 +1,5 @@
 ﻿#PCXLab Create package
 
-function New-PCXCMPackage{
-
 <#
 .SYNOPSIS
 Creates a new SCCM package.
@@ -55,8 +53,6 @@ CHANGELOG:
 - Initial version
 #>
 
-
-
 <#
 MS-Document : 
 https://learn.microsoft.com/en-us/powershell/module/configurationmanager/new-cmpackage?view=sccm-ps
@@ -75,57 +71,55 @@ New-CMPackage
     [-Confirm]
     [<CommonParameters>]
 
-
 Direct Command :
 New-CMPackage -Name $Packagename -Manufacturer $Company -Version $Version -Language $Language -Path $Path       
-
 #>
 
 # Function goes below
+function New-PCXCMPackage{
 param (
         [parameter(Mandatory=$true, Position=0, HelpMessage = "Enter the package name properly!!!")] 
         [ValidateNotNullOrEmpty()]         
         [Alias("Name","Pkg","Package","PkgName")] 
-        [string]$packagename,
+        [string]$Packagename,
 
         [parameter(Mandatory=$true, Position=1, HelpMessage = "Enter the Company name properly!!!")] 
         [ValidateLength(3,50)]             
-        [Alias("Comp")] [string]$company,
+        [Alias("Comp")] [string]$Company,
 
         [parameter(Mandatory=$true, Position=2, HelpMessage = "What is the version boss!!!")]        
         [ValidatePattern('^\d+(\.\d+)*$')] 
         [Alias("Ver")]  
-        [string]$version,
+        [string]$Version,
 
         [parameter(Mandatory=$false, Position=3, HelpMessage = "Ov Base maraya sari panla")]          
         [ValidateSet("EN-US","EN-GB","FR-FR","DE-DE")] 
         [Alias("Lang")]
-        [string]$language = "EN-US",
+        [string]$Language = "EN-US",
 
         [parameter(Mandatory=$true, Position=4, HelpMessage = "Masala Dose ? Chatni kodi maraya")]   
         [Alias("Location")]
-        [string]$path
+        [string]$Path
      )
             # assing packag object to variable
-            $Package = Get-CMPackage -Name $packagename
+            $Package = Get-CMPackage -Name $Packagename
             
             # If condition to check and proceed with packae creation
             if ($Package -ne $null) 
                 {
-                    Write-Host "Pacckage $packagename   is alrady there we will not create it again" -ForegroundColor Yellow
+                    Write-Host "Pacckage $Packagename   is alrady there we will not create it again" -ForegroundColor Yellow
                 } 
             else {
                 Write-Host "Pakcage not there we will create it now" -ForegroundColor Green
                 # Crete paakge 
-                New-CMPackage -Name $packagename -Manufacturer $company -Version $version -Language $language -Path $path       
+                New-CMPackage -Name $Packagename -Manufacturer $Company -Version $Version -Language $Language -Path $Path       
                 }
 
 }
 
-
 <# 
 Usage example ""
-New-PCXCMPackage -Packagename "PKG_7zip_2.0.0" -Company "Igor_Pavlov" -vVrsion "2.0.0" -Language "EN-US" -Path "\\192.168.25.214\Package_Source\Applications\Igor_Pavlov\7zip\7zip_2.0.0"
+New-PCXCMPackage -Packagename "PKG_7zip_2.0.0" -Company "Igor_Pavlov" -Version "2.0.0" -Language "EN-US" -Path "\\192.168.25.214\Package_Source\Applications\Igor_Pavlov\7zip\7zip_2.0.0"
 write-host "Package Created" -ForegroundColor Green
 #>
 

@@ -31,9 +31,28 @@ function Remove-PCXCMFolder {
         [Parameter(Mandatory=$true)] 
         [String] $ParentFolderPath
     )
+begin {
+        Write-Host "Welcome to PCXLab automation" -ForegroundColor Yellow
+    }
 
-Remove-CMFolder -Name $FolderName -ParentFolderPath $ParentFolderPath -Force
-
+    process {
+                try {
+                    Write-Host "We are Deleting Folder : $FolderName " -ForegroundColor Yellow
+                    Remove-CMFolder -Name $FolderName -ParentFolderPath $ParentFolderPath -Force
+                    Write-Host "Folder $FolderName is Deleted." -ForegroundColor Green
+                    Write-Host "We tried and successfuly deleted................."  -ForegroundColor Magenta
+                }
+                catch {
+                    Write-Host $_ -ForegroundColor Red
+                }
+                finally {
+                    <#Do this after the try block regardless of whether an exception occurred or not#>
+                    Write-Host "This is finaly block runs even for success and even for failure" -ForegroundColor Cyan
+                }
+    }
+    end {
+        Write-Host "Thank you - www.pcxlab.com " -ForegroundColor Yellow
+    }
 }
 
 <# 

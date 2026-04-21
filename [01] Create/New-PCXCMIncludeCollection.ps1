@@ -25,8 +25,28 @@ function New-PCXCMIncludeCollection{
         [parameter(Mandatory=$true)] 
         [string] $IncludeCollection
     )
-    Add-CMDeviceCollectionIncludeMembershipRule -CollectionName $CollectionName -IncludeCollectionName $IncludeCollection
-    Write-Host "Collection included" -ForegroundColor Green
+    begin {
+        Write-Host "Welcome to PCXLab automation" -ForegroundColor Yellow
+    }
+
+    process {
+                try {
+                    Write-Host "We are adding IncludeCollection : $IncludeCollection " -ForegroundColor Yellow
+                    Add-CMDeviceCollectionIncludeMembershipRule -CollectionName $CollectionName -IncludeCollectionName $IncludeCollection
+                    Write-Host "IncludeCollection $IncludeCollection is created." -ForegroundColor Green
+                    Write-Host "We tried and successfuly created................."  -ForegroundColor Magenta
+                }
+                catch {
+                    Write-Host $_ -ForegroundColor Red
+                }
+                finally {
+                    <#Do this after the try block regardless of whether an exception occurred or not#>
+                    Write-Host "This is finaly block runs even for success and even for failure" -ForegroundColor Cyan
+                }
+    }
+    end {
+        Write-Host "Thank you - www.pcxlab.com " -ForegroundColor Yellow
+    }
 }
 
 <# 

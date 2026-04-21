@@ -21,4 +21,4 @@ Start-CMContentDistribution -PackageName $packagename -DistributionPointGroupNam
 }
 
 
-New-PCXCMDistributecontent -packagename "PKG_7zip_2.0.0_01" -distributionpointgroupname "ALL Mangalore Group"
+New-PCXCMDistributecontent -packagename "PKG_7zip_2.0.0" -distributionpointgroupname "ALL Mangalore Group"

@@ -28,7 +28,28 @@ function Remove-PCXCMIncludeCollection{
         [string] $IncludecollectionName
      )
 
-Remove-CMCollectionIncludeMembershipRule -CollectionName "$CollectionName" -IncludeCollectionName "$IncludecollectionName" -Force
+     begin {
+        Write-Host "Welcome to PCXLab automation" -ForegroundColor Yellow
+    }
+
+    process {
+                try {
+                    Write-Host "We are Deleting IncludecollectionName : $IncludecollectionName " -ForegroundColor Yellow
+                    Remove-CMCollectionIncludeMembershipRule -CollectionName "$CollectionName" -IncludeCollectionName "$IncludecollectionName" -Force
+                    Write-Host "IncludecollectionName  $IncludecollectionName  is Deleted." -ForegroundColor Green
+                    Write-Host "We tried and successfuly deleted................."  -ForegroundColor Magenta
+                }
+                catch {
+                    Write-Host $_ -ForegroundColor Red
+                }
+                finally {
+                    <#Do this after the try block regardless of whether an exception occurred or not#>
+                    Write-Host "This is finaly block runs even for success and even for failure" -ForegroundColor Cyan
+                }
+    }
+    end {
+        Write-Host "Thank you - www.pcxlab.com " -ForegroundColor Yellow
+    }
 }
 
 <# 

@@ -37,12 +37,27 @@ function  Set-PCXCMFolder{
         [Alias("Path", "PFPath")]
         [string] $ParentFolderPath
     )
-Set-CMFolder -Name $OldName -NewName $NewName -ParentFolderPath $ParentFolderPath
+
+    # Start
+        begin {
+            Write-Host "We are updating Collection Folder : $NewName "
+        }
+
+        # Actuall Process goeas here
+        process {
+            Set-CMFolder -Name $OldName -NewName $NewName -ParentFolderPath $ParentFolderPath
+
+        }
+
+        # End in flow chart
+        end {
+            Write-Host "Folder update process completed : $NewName"
+        }
 }
 
 <# 
 Usage example :
-Set-PCXCMFolder -OldName "TEST" -NewName "TEST2" -ParentFolderPath "DeviceCollection"
+Set-PCXCMFolder -OldName "TEST1" -NewName "TEST4" -ParentFolderPath "DeviceCollection"
 #>
 
 

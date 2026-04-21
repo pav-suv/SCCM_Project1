@@ -18,18 +18,43 @@ New-CMFolder -ParentFolderPath "DeviceCollection" -Name "Test"
 
 function  New-PCXCMFolder {
     param (
-        [parameter(Mandatory=$true)]
+        [parameter(Mandatory=$true, Position=0)]
+        [Alias("Path")]
         [string]$ParentFolderPath,
 
-        [parameter(Mandatory=$true)]
+        [parameter(Mandatory=$true, Position=1)]
+        [Alias("Name")]
         [string]$FolderName
     )
-New-CMFolder -ParentFolderPath $ParentFolderPath -Name $FolderName  
-Write-Host "$FolderName folder is created" -ForegroundColor Yellow
+    begin {
+        Write-Host "Welcome to PCXLab automation" -ForegroundColor Yellow
+    }
+
+    process {
+                try {
+                    Write-Host "We are creating new Folder : $FolderName " -ForegroundColor Yellow
+                    New-CMFolder -ParentFolderPath $ParentFolderPath -Name $FolderName  
+
+
+                    Write-Host "Folder $FolderName  is created." -ForegroundColor Green
+                    Write-Host "We tried and successfuly created................."  -ForegroundColor Magenta
+                }
+                catch {
+                    Write-Host $_ -ForegroundColor Red
+                }
+                finally {
+                    <#Do this after the try block regardless of whether an exception occurred or not#>
+                    Write-Host "This is finaly block runs even for success and even for failure" -ForegroundColor Cyan
+                }
+    }
+    end {
+        Write-Host "Thank you - www.pcxlab.com " -ForegroundColor Yellow
+    }
 }
+
 <# 
 Usage example :
-New-PCXCMFolder -ParentFolderPath "DeviceCollection" -FolderName "TEST" 
+New-PCXCMFolder -ParentFolderPath "DeviceCollection" -FolderName "TEST5" 
 #>
 
 <#

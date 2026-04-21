@@ -34,23 +34,30 @@ function Start-PCXCMContentDistributionForApplication{
         [String]$DistributionPointGroup
 
     )
-
-    begin{
-        Write-Host "Welcome to PCXLab Automation for IT task - NOT PROFESSIONAL ONLY FOR LEARNING" -ForegroundColor Cyan
-        Write-Host "New are updating application $ApplicationName to DP Group $DistributionPointGroup" -ForegroundColor Yellow
+    begin {
+        Write-Host "Welcome to PCXLab automation" -ForegroundColor Yellow
     }
 
-    process{
-        Start-CMContentDistribution -ApplicationName $ApplicationName -DistributionPointGroupName $DistributionPointGroup
+    process {
+                try {
+                    Write-Host "Distibution point group name : $DistributionPointGroup " -ForegroundColor Yellow
+                    Start-CMContentDistribution -ApplicationName $ApplicationName -DistributionPointGroupName $DistributionPointGroup
+                    Write-Host "Distibution point group name $DistributionPointGroup is created." -ForegroundColor Green
+                    Write-Host "We tried and successfuly created................."  -ForegroundColor Magenta
+                }
+                catch {
+                    Write-Host $_ -ForegroundColor Red
+                }
+                finally {
+                    <#Do this after the try block regardless of whether an exception occurred or not#>
+                    Write-Host "This is finaly block runs even for success and even for failure" -ForegroundColor Cyan
+                }
     }
-
-    end{
-        Write-Host "$ApplicationName updated to the DP group $DistributionPointGroup" -ForegroundColor Yellow
-        Write-Host "Thank you - www.PCXlab.com - NOT PROFESSIONAL ONLY FOR LEARNING" -ForegroundColor Cyan
+    end {
+        Write-Host "Thank you - www.pcxlab.com " -ForegroundColor Yellow
     }
-
 }
-
+   
 <# 
 Usage example :
 Start-PCXCMContentDistributionForApplication -ApplicationName "APS_7zip_26.0.0" -DistributionPointGroupName "ALL Mangalore Group"

@@ -32,8 +32,30 @@ function Remove-Deployments{
         [string] $CollectionName
         
     )
-Remove-CMApplicationDeployment -Name "$Name" -CollectionName "$CollectionName"
+    begin {
+        Write-Host "Welcome to PCXLab automation" -ForegroundColor Yellow
+    }
+
+    process {
+                try {
+                    Write-Host "We are Deleting Application Deployments : $Name " -ForegroundColor Yellow
+                    Remove-CMApplicationDeployment -Name "$Name" -CollectionName "$CollectionName"
+                    Write-Host "Application Deployment is Deleted." -ForegroundColor Green
+                    Write-Host "We tried and successfuly deleted................."  -ForegroundColor Magenta
+                }
+                catch {
+                    Write-Host $_ -ForegroundColor Red
+                }
+                finally {
+                    <#Do this after the try block regardless of whether an exception occurred or not#>
+                    Write-Host "This is finaly block runs even for success and even for failure" -ForegroundColor Cyan
+                }
+    }
+    end {
+        Write-Host "Thank you - www.pcxlab.com " -ForegroundColor Yellow
+    }
 }
+
 
 <# 
 Usage example :

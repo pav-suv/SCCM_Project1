@@ -56,8 +56,8 @@ function New-PCXCMApplicationDeployment{
         [string]$Name,
 
         [parameter(Mandatory=$true, Position=1)] 
-        [Alias("DateTime","AvlDT")]
-        [datetime]$Availabledatetime,
+        [Alias("AvlDT")]
+        [DateTime]$Availabledatetime,
 
         [parameter(Mandatory=$true, Position=2)]
         [Alias("CLName")]
@@ -65,7 +65,7 @@ function New-PCXCMApplicationDeployment{
 
         [parameter(Mandatory=$true, Position=3)] 
         [Alias("DedDT")]
-        [datetime]$Deadlinedatetime,
+        [DateTime]$Deadlinedatetime,
 
         [parameter(Mandatory=$true, Position=4)] 
         [Alias("Acn")]
@@ -75,27 +75,33 @@ function New-PCXCMApplicationDeployment{
         [Alias("Reason","Rsn")]
         [string]$Purpose
     )
+    begin {
+        Write-Host "Welcome to PCXLab automation" -ForegroundColor Yellow
+    }
 
-        # Start
-        begin {
-            Write-Host "We are creating new application deployment : $Name "
-        }
-
-        # Actuall Process goeas here
-        process {
-            New-CMApplicationDeployment -Name "$Name" -AvailableDateTime "$Availabledatetime" -CollectionName $Collectionname  -DeadlineDateTime $Deadlinedatetime -DeployAction $Action -DeployPurpose $Purpose
-        }
-
-        # End in flow chart
-        end {
-            Write-Host "Deployment creation process completed : $Name"
-        }
+    process {
+                try {
+                    Write-Host "We are creating new Application Deployment : $Name " -ForegroundColor Yellow
+                    New-CMApplicationDeployment -Name "$Name" -AvailableDateTime "$Availabledatetime" -CollectionName $Collectionname  -DeadlineDateTime $Deadlinedatetime -DeployAction $Action -DeployPurpose $Purpose
+                    Write-Host "Application Deployment $Name is created." -ForegroundColor Green
+                    Write-Host "We tried and successfuly created................."  -ForegroundColor Magenta
+                }
+                catch {
+                    Write-Host $_ -ForegroundColor Red
+                }
+                finally {
+                    <#Do this after the try block regardless of whether an exception occurred or not#>
+                    Write-Host "This is finaly block runs even for success and even for failure" -ForegroundColor Cyan
+                }
+    }
+    end {
+        Write-Host "Thank you - www.pcxlab.com " -ForegroundColor Yellow
+    }
 }
-
 <# 
 Usage example : 
-New-PCXCMApplicationDeployment -Name "APS_7zip_26.0.1" -AvailableDateTime '12/04/2026 00:00:00' -Collectionname 'PKG_7zip_2.0.0_01[Available]' -DeadlineDateTime '06/04/2026 00:00:00' -Action "Install" -Purpose "Required"
-New-PCXCMApplicationDeploymentment -Name "APS_7zip_26.0.1" -AvailableDateTime '12/04/2026 00:00:00' -Collectionname 'PKG_7zip_2.0.0_01[Install]' -DeadlineDateTime '06/04/2026 00:00:00' -Action "Install" -Purpose "Available"
-New-PCXCMApplicationDeployment -Name "APS_7zip_26.0.1" -AvailableDateTime '12/04/2026 00:00:00' -Collectionname 'PKG_7zip_2.0.0_01[UnInstall]' -DeadlineDateTime '06/04/2026 00:00:00' -Action "Uninstall" -Purpose "Required"
+New-PCXCMApplicationDeployment -Name "APS_7zip_26.0.1" -AvailableDateTime '21/04/2026 00:00:00' -Collectionname 'PKG_7zip_2.0.0_01[Available]' -DeadlineDateTime '22/04/2026 00:00:00' -Action "Install" -Purpose "Available"
+New-PCXCMApplicationDeployment -Name "APS_7zip_26.0.1" -AvailableDateTime '21/04/2026 00:00:00' -Collectionname 'PKG_7zip_2.0.0_01[Install]' -DeadlineDateTime '22/04/2026 00:00:00' -Action "Install" -Purpose "Required"
+New-PCXCMApplicationDeployment -Name "APS_7zip_26.0.1" -AvailableDateTime '21/04/2026 00:00:00' -Collectionname 'PKG_7zip_2.0.0_01[UnInstall]' -DeadlineDateTime '22/04/2026 00:00:00' -Action "Uninstall" -Purpose "Required"
 #>
 

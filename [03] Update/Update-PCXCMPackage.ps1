@@ -36,10 +36,8 @@ Set-CMPackage
     [-Confirm]
     [<CommonParameters>]
 
-
 Direct Command :
     Set-CMPackage -Name $PackageName -Description "Hellow" -Language $Language
-
 #>
 
 # Function goes below
@@ -54,14 +52,26 @@ function Update-PCXCMPackage {
         [string] $Language
         
     )
-    
-    Set-CMPackage -Name $Packagename -Description "Hellow" -Language $Language
+    # Start
+        begin {
+            Write-Host "We are updating Package : $Packagename "
+        }
+
+        # Actuall Process goeas here
+        process {
+            Set-CMPackage -Name $Packagename -Description "Hello" -Language $Language
+
+        }
+
+        # End in flow chart
+        end {
+            Write-Host "Package update process completed : $Packagename"
+        }
 }
 
 <# 
 Usage example :
-Update-PCXCMPackage -Packagename "PKG_7zip_2.0.0_01" -Language "EN-US"
-
+Update-PCXCMPackage -Packagename "PKG_7zip_2.0.0_02" -Language "EN-US"
 #>
 
 

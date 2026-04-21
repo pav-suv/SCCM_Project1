@@ -30,7 +30,28 @@ function Remove-PCXCMProgram{
         [string]$ProgramName
      )
 
-Remove-CMProgram -PackageId $PackageID -ProgramName $ProgramName -Force
+     begin {
+        Write-Host "Welcome to PCXLab automation" -ForegroundColor Yellow
+    }
+
+    process {
+                try {
+                    Write-Host "We are Deleting Package Program: $ProgramName " -ForegroundColor Yellow
+                    Remove-CMProgram -PackageId $PackageID -ProgramName $ProgramName -Force
+                    Write-Host "Package Program $ProgramName is Deleted." -ForegroundColor Green
+                    Write-Host "We tried and successfuly deleted................."  -ForegroundColor Magenta
+                }
+                catch {
+                    Write-Host $_ -ForegroundColor Red
+                }
+                finally {
+                    <#Do this after the try block regardless of whether an exception occurred or not#>
+                    Write-Host "This is finaly block runs even for success and even for failure" -ForegroundColor Cyan
+                }
+    }
+    end {
+        Write-Host "Thank you - www.pcxlab.com " -ForegroundColor Yellow
+    }
 }
 
 <# 

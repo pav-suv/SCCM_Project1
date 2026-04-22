@@ -33,7 +33,7 @@ function Remove-PCXCMPackage{
     process {
                 try {
                     Write-Host "We are Deleting PackageName : $PackageName " -ForegroundColor Yellow
-                    Remove-CMPackage -Name "$PackageName"
+                    Remove-CMPackage -Name "$PackageName" -Force
                     Write-Host "PackageName $PackageName is Deleted." -ForegroundColor Green
                     Write-Host "We tried and successfuly deleted................."  -ForegroundColor Magenta
                 }
@@ -52,6 +52,9 @@ function Remove-PCXCMPackage{
 
 <# 
 Usage example :
-Remove-PCXCMPackage -PackageName "PKG_7zip_2.0.0_01" 
+Remove-PCXCMPackage -PackageName "PKG_7zip_2.0.0_01"
+Remove-PCXCMPackage -PackageName "PKG_7zip_2.0.0_01"
+Remove-PCXCMPackage -PackageName "PKG_7zip_2.0.0"
+Remove-PCXCMPackage -PackageName "PKGS_7zip_26.00"
 #>
 

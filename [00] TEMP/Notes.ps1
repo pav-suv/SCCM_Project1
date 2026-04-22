@@ -55,3 +55,11 @@ example
 
 #>
 
+
+
+############################# 22 April 2026 
+
+#Direct Command (TEST command is working it or not before going to create function):
+#DO NOT USE Variables in side direct command 
+
+#Usage example (Test Zworking function or not before adding to usesage example section):

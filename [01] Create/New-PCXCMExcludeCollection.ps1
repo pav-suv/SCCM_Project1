@@ -28,6 +28,7 @@ function New-PCXCMExcludeCollection{
         [Alias("ExCollection","Exclude")]
         [string] $ExcludeCollection
     )
+    
     begin {
         Write-Host "Welcome to PCXLab automation" -ForegroundColor Yellow
     }

@@ -24,7 +24,7 @@ Add-CMDeploymentType
     [<CommonParameters>]
 
 Direct Command :
-    Add-CMMDeploymentType -ApplicationName "$name" -InstallationFileLocation $InstallationFileLocation -ForceForUnknownPublisher   
+    Add-CMDeploymentType -ApplicationName "$name" -InstallationFileLocation $InstallationFileLocation -ForceForUnknownPublisher   
 #>
 
 # Function goes below
@@ -45,7 +45,7 @@ function New-PCXCMApplicationDeploymentType {
     process {
                 try {
                     Write-Host "We are adding new DeploymentType : $Name " -ForegroundColor Yellow
-                    Add-CMDeploymentType -ApplicationName "$Name" -InstallationFileLocation $InstallationFileLocation  
+                    Add-CMDeploymentType -ApplicationName "$Name" -InstallationFileLocation $InstallationFileLocation  -ForceForUnknownPublisher
 
                     Write-Host "DeploymentType is created." -ForegroundColor Green
                     Write-Host "We tried and successfuly created................."  -ForegroundColor Magenta
@@ -65,13 +65,14 @@ function New-PCXCMApplicationDeploymentType {
 
 <# 
 Usage example :
-New-PCXCMApplicationDeploymentType  -name "APS_7zip_26.0.1" -InstallationFileLocation "\\192.168.25.214\Package_Source\Applications\Igor_Pavlov\7Zip_msi\7zip_26.0.0\7z2600-x64.msi" -ForceForUnknownPublisher   
+New-PCXCMApplicationDeploymentType  -name "APS_7zip_26.0.1" -InstallationFileLocation "\\192.168.25.214\Package_Source\Applications\Igor_Pavlov\7Zip_msi\7zip_26.0.0\7z2600-x64.msi" 
 #>
 
 
 New-PCXCMApplicationDeploymentType  -name "APS_7zip_26.0.1" -InstallationFileLocation "\\192.168.25.214\Package_Source\Applications\Igor_Pavlov\7Zip_msi\7zip_26.0.0\7z2600-x64.msi" 
 
 
+    Add-CMDeploymentType -ApplicationName "APS_7zip_26.0.1" -InstallationFileLocation $InstallationFileLocation -ForceForUnknownPublisher   
 
 
 

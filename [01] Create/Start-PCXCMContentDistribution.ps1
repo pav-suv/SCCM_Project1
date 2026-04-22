@@ -60,7 +60,7 @@ function Start-PCXCMContentDistributionForApplication{
    
 <# 
 Usage example :
-Start-PCXCMContentDistributionForApplication -ApplicationName "APS_7zip_26.0.0" -DistributionPointGroupName "ALL Mangalore Group"
+Start-PCXCMContentDistributionForApplication -ApplicationName "APS_7zip_26.0.1" -DistributionPointGroupName "ALL Mangalore Group"
 
 #>
 

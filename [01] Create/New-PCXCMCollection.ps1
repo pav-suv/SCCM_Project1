@@ -56,6 +56,8 @@ function New-PCXCMCollection{
     }
 }  
 
+New-PCXCMCollection -CollectionName "PKG_7zip_2.0.0_01[Install]" 
+
 <# 
 Usage example :
  New-PCXCMCollection -CollectionName "PKG_7zip_2.0.0_01[Install]" 

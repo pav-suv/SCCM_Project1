@@ -33,6 +33,9 @@
     [<CommonParameters>]
 
     Direct command
+    $name   = "APS_7zip_26.0.1"
+    $publisher = 
+    $softwereversion =
     New-CMApplication -Name "$name"  -Description "$description" -Publisher "$publisher"  -SoftwareVersion "$softwereversion" -OptionalReference "Reference" -ReleaseDate "$ReleaseDate" -AutoInstall $True -Owner "Administrator" -SupportContact "Administrator" -LocalizedName "Application01" -UserDocumentation "https://contoso.com/content" -LinkText "For more information" -LocalizedDescription "New Localized Application" -Keyword "application" -PrivacyUrl "https://contoso.com/library/privacy" -IsFeatured $True -IconLocationFile "$Iconlocationfile"
    #>
 

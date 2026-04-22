@@ -54,7 +54,7 @@ function  New-PCXCMFolder {
 
 <# 
 Usage example :
-New-PCXCMFolder -ParentFolderPath "DeviceCollection" -FolderName "TEST5" 
+New-PCXCMFolder -ParentFolderPath "DeviceCollection" -FolderName "TEST9" 
 #>
 
 <#
